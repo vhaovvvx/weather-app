@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 # Dependencies
     "axios": "^0.21.1",
+    "antd": "^4.16.12",
+    "react-loading": "^2.0.3",
     "chart.js": "^3.5.0",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
