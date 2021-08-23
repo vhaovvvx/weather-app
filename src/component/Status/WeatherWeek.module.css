@@ -1,0 +1,70 @@
+.weatherActive{
+    border-radius: 10px;
+}
+
+.bgWhite{
+    margin-bottom:1rem ;
+}
+
+.weatherActive .bgInfo{
+    background-color: var(--aQua) ;
+    border-radius: 10px;
+}
+
+.bgInfo{
+    padding: 0.25rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.bgInfoDate{
+    text-align: left;
+    font-size: 1rem;
+    color: rgb(0 0 0/26%);
+    padding-bottom: 1rem;
+}
+
+.tempWeek{
+    padding-bottom: 1rem;
+    color: var(--textGray);
+}
+
+.content{
+    margin-top: 2rem
+}
+
+.contentBox{
+border-radius: 10px;
+}
+
+.contentDate{
+    padding: 0.25rem;
+    background-color: var(--white);
+    color: var(--textGray);
+    font-size: 1.25rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.boxItems{
+    background-color: var(--white);
+    display: flex;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.boxBg{
+    padding: 0.25rem;
+}
+
+.item{
+    color: var(--textGray);
+    margin-bottom: 1rem;
+}
+
+@media (max-width:740px) {
+    .boxItems{
+        display: block;
+    }
+}

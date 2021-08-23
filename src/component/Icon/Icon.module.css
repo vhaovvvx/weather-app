@@ -1,0 +1,23 @@
+
+.UvIndex{
+    color:var(--iconYellow);
+}
+
+.iconWindStatus{
+    color: var(--iconBlue);
+}
+.SunriseAndSunset{
+    color:var(--iconYellow);
+}
+
+.Humidity{
+    color: var(--iconBlue);
+}
+
+.Visibility{
+    color:var(--iconYellow);
+}
+
+.Pressure{
+    color: var(--iconBlue);
+}

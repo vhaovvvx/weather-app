@@ -1,0 +1,21 @@
+.danger{
+  border:1px solid var(--darkRed);
+  color:var(--red);
+  padding: 1rem;
+  background-color: var(--whiteRgb);
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigationBtnGroup{
+  display: flex;
+}
+
+.navigationImg{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}

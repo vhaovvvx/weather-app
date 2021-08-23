@@ -1,0 +1,77 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8d0eee4 (add spin antd)
+.weatherInput input{
+  padding: 10px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid var(--blackBorder);
+  outline: none;
+}
+
+.weatherInput input:focus{
+
+  box-shadow:0 0 0 5px var(--greenBorder);
+  border-radius: 5px;
+}
+
+
+.weatherBox{
+    line-height: 1.5;
+    font-size: 1rem;
+    color: var(--textGray);
+    margin-bottom: 1rem;
+}
+
+.date{
+    font-size: 1.25rem;
+    line-height: 2;
+}
+
+.weather,.clouds{
+    color: var(--textGray);
+}
+
+.country{
+    color:#212529;
+    line-height: 1.25;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .temp{
+    font-size: 2.5rem;
+    line-height: 1.25;
+
+    font-weight: 700;
+
+  }
+
+  .imgBox{
+    position: relative;
+
+  }
+
+.imgBox img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.textCenterImg{
+    font-size: 1.75rem;
+    text-align: center;
+
+    font-weight: 700;
+
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    width: 100%;
+    color:var(--white);
+
+
+}

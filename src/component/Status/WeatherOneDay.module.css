@@ -1,0 +1,57 @@
+.test{
+    padding: 15px;
+}
+
+<<<<<<< HEAD
+=======
+.spin.spin2{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  
+
+>>>>>>> 8d0eee4 (add spin antd)
+.mgBottom1r{
+    margin-bottom: 1rem;
+    color: rgb(0 0 0/26%);
+    font-size: 1.25rem;
+}
+
+.bgWhite{
+    height:190px;
+    padding: 10px;
+    background-color: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.statusItem{
+    flex-direction: column;
+}
+
+.sunRise{
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+.content{
+    margin: auto 0;
+    font-size: 1.75rem;
+    color: var(--textGray);
+    font-weight: 700;
+}
+
+.icon,.content{
+    flex-direction: column;
+    text-align: center;
+}
+
+
+@media (max-width:740px) {
+    .sunRise{
+    justify-content: center;
+        
+    }
+}
