@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dependencies
     "axios": "^0.21.1",
     "antd": "^4.16.12",
@@ -15,8 +14,6 @@
     "redux-thunk": "^2.3.0",
     "web-vitals": "^1.1.2"
 
-=======
->>>>>>> 8d0eee4 (add spin antd)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
