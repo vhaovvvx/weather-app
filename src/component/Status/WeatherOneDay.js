@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { Spin } from 'antd';
->>>>>>> 8d0eee4 (add spin antd)
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { formatAMPM, getKm, getWindKmPerSec } from '../GetDateAmPm';
@@ -14,10 +11,7 @@ import {
   WindStatus,
 } from '../Icon/Icon';
 import classes from './WeatherOneDay.module.css';
-<<<<<<< HEAD
-=======
 import 'antd/dist/antd.css';
->>>>>>> 8d0eee4 (add spin antd)
 
 const WeatherOneDay = () => {
   const data = useSelector((state) => state.weather.data);
@@ -25,14 +19,10 @@ const WeatherOneDay = () => {
   return (
     <>
       {data.current === undefined ? (
-<<<<<<< HEAD
-        <div>loadding...</div>
-=======
         <Spin
           className={`${classes.spin} ${classes.spin2}`} // add class to override antd's class
           type='large'
         ></Spin>
->>>>>>> 8d0eee4 (add spin antd)
       ) : (
         <div className={`row ${classes.test}`}>
           <div className={`col c-6 l-4 m-12 ${classes.statusItem}`}>

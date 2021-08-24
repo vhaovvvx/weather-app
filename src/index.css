@@ -805,24 +805,16 @@ summary {
 }
 
 .weather-wrap{
-<<<<<<< HEAD
-=======
   position: relative;
->>>>>>> 8d0eee4 (add spin antd)
   background-color: var(--white);
 }
 
 .status-wrap{
-<<<<<<< HEAD
-=======
   position: relative;
->>>>>>> 8d0eee4 (add spin antd)
   background-color: var(--rgb246-246-248);
     height: 90vh
 }
 
-<<<<<<< HEAD
-=======
 .spin{
   position: absolute;
   top:50%;
@@ -830,7 +822,6 @@ summary {
   transform: translate(-50%,-50%);
 }
 
->>>>>>> 8d0eee4 (add spin antd)
 .item{
   padding-top:15px;
   padding-bottom: 15px;

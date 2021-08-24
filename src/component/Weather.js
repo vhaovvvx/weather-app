@@ -4,10 +4,7 @@ import classes from './Weather.module.css';
 import logo from '../img/backgroundHeavyRain.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import { findCityByName } from '../redux/actions/index';
-<<<<<<< HEAD
-=======
 import { Spin } from 'antd';
->>>>>>> 8d0eee4 (add spin antd)
 
 function Weather(props) {
   const data = useSelector((state) => state.weather.data);
@@ -33,11 +30,7 @@ function Weather(props) {
   return (
     <>
       {data.current === undefined ? (
-<<<<<<< HEAD
-        <div>Loading...</div>
-=======
         <Spin className={classes.spin} size='large' />
->>>>>>> 8d0eee4 (add spin antd)
       ) : (
         <div className={classes.weatherInput}>
           <div className='form-input'>
