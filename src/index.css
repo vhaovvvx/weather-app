@@ -812,7 +812,8 @@ summary {
 .status-wrap{
   position: relative;
   background-color: var(--rgb246-246-248);
-    height: 90vh
+    height: 90vh;
+    overflow: auto;
 }
 
 .spin{
@@ -829,6 +830,10 @@ summary {
 
 .flex{
   display: flex;
+}
+
+.overFlowHidden{
+  overflow: hidden;
 }
 
 .fwBold{
@@ -852,4 +857,10 @@ summary {
 .btn.actived{
   font-weight: 700;
   border-bottom: 2px solid var(--btnColor);
+}
+
+@media (min-width:740px) {
+  .item.weather-wrap{
+    height: 90vh;
+  }
 }
