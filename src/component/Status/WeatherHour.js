@@ -13,15 +13,7 @@ function WeatherHour() {
     dataTesting.hourly.forEach((res, i) => {
       if (i % 2 !== 0) {
         dataTemp.push(res.temp);
-      }
-    });
-    dataTesting.hourly.forEach((res, i) => {
-      if (i % 2 !== 0) {
         dataFeelsLike.push(res.feels_like);
-      }
-    });
-    dataTesting.hourly.forEach((res, i) => {
-      if (i % 2 !== 0) {
         currentTime.push(formatAMPM(res.dt));
       }
     });
@@ -46,16 +38,6 @@ function WeatherHour() {
               fill: false,
             },
           ],
-        }}
-        options={{
-          title: {
-            display: true,
-            text: 'World population per region (in millions)',
-          },
-          legend: {
-            display: true,
-            position: 'bottom',
-          },
         }}
       />
     </>
