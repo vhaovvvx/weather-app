@@ -1,22 +1,30 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { connect } from 'redux-zero/react';
 import Main from './component/Main';
-import TestContextProvider from './contexts/testContext';
-import { getData } from './redux/actions';
+import { getDataWeek, findCityName } from './reduxZero/actions';
 
-function App() {
-  const dispatch = useDispatch();
+function App({ data, getDataWeek }) {
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getData(21.0245, 105.8412)); //Hanoi
+  // }, [dispatch]);
+
   useEffect(() => {
-    dispatch(getData(21.0245, 105.8412)); //Hanoi
-  }, [dispatch]);
+    getDataWeek(21.0245, 105.8412);
+  }, []);
 
   return (
     <div className='app'>
-      <TestContextProvider>
-        <Main />
-      </TestContextProvider>
+      <Main />
     </div>
   );
 }
 
-export default App;
+const actions = {
+  getDataWeek,
+};
+const mapToProps = ({ data }) => ({ data });
+
+const connected = connect(mapToProps, actions);
+
+export default connected(App);

@@ -12,13 +12,12 @@ import {
 } from '../Icon/Icon';
 import classes from './WeatherOneDay.module.css';
 import 'antd/dist/antd.css';
+import { connect } from 'redux-zero/react';
 
-const WeatherOneDay = () => {
-  const data = useSelector((state) => state.weather.data);
-
+const WeatherOneDay = ({ data }) => {
   return (
     <>
-      {data.current === undefined ? (
+      {data === undefined ? (
         <Spin
           className={`${classes.spin} ${classes.spin2}`} // add class to override antd's class
           type='large'
@@ -103,4 +102,8 @@ const WeatherOneDay = () => {
   );
 };
 
-export default WeatherOneDay;
+const mapToProps = ({ data }) => ({ data });
+
+const connected = connect(mapToProps);
+
+export default connected(WeatherOneDay);

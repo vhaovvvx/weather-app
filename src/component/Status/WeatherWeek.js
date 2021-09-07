@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { formatAMPM, getDate, getDay, getWindKmPerSec } from '../GetDateAmPm';
 import classes from './WeatherWeek.module.css';
+import { connect } from 'redux-zero/react';
 
-function WeatherWeek() {
-  const dataTesting = useSelector((state) => state.weather.data);
-
-  const data = true;
-
+function WeatherWeek({ data }) {
   const [clickedId, setClickedId] = useState(0);
   const [actived, setActived] = useState(0);
 
@@ -22,7 +19,7 @@ function WeatherWeek() {
     <>
       <div className='row'>
         {data !== undefined
-          ? dataTesting.daily.map((res, i) => (
+          ? data.daily.map((res, i) => (
               <div
                 key={i}
                 name={getDay(res.sunrise)}
@@ -54,37 +51,37 @@ function WeatherWeek() {
         <div className={`${classes.content} row`}>
           <div className={`${classes.contentBox} col c-12 l-12 m-12`}>
             <div className={classes.contentDate}>
-              {getDate(dataTesting.daily[clickedId].dt)}
+              {getDate(data.daily[clickedId].dt)}
             </div>
             <div className={classes.boxItems}>
               <div className={`${classes.boxBg} col c-6 l-6 m-12`}>
                 <div
                   className={classes.item}
-                >{`Temp current: ${dataTesting.daily[clickedId].temp.day} °C`}</div>
+                >{`Temp current: ${data.daily[clickedId].temp.day} °C`}</div>
                 <div
                   className={classes.item}
-                >{`Temp: ${dataTesting.daily[clickedId].temp.min} °C - ${dataTesting.daily[clickedId].temp.max} °C`}</div>
+                >{`Temp: ${data.daily[clickedId].temp.min} °C - ${data.daily[clickedId].temp.max} °C`}</div>
 
                 <div
                   className={classes.item}
-                >{`Humidity:${dataTesting.daily[clickedId].humidity} %`}</div>
+                >{`Humidity:${data.daily[clickedId].humidity} %`}</div>
                 <div className={classes.item}>{`Wind speed: ${getWindKmPerSec(
-                  dataTesting.daily[clickedId].wind_speed
+                  data.daily[clickedId].wind_speed
                 )}`}</div>
               </div>
               <div className={`${classes.boxBg} col c-6 l-6 m-12`}>
                 <div className={classes.item}>{`Sunrise: ${formatAMPM(
-                  dataTesting.daily[clickedId].sunrise
+                  data.daily[clickedId].sunrise
                 )}`}</div>
                 <div className={classes.item}>{`Sunset: ${formatAMPM(
-                  dataTesting.daily[clickedId].sunset
+                  data.daily[clickedId].sunset
                 )}`}</div>
                 <div
                   className={classes.item}
-                >{`Description: ${dataTesting.daily[clickedId].weather[0].description}`}</div>
+                >{`Description: ${data.daily[clickedId].weather[0].description}`}</div>
                 <div
                   className={classes.item}
-                >{`Atmospheric pressure: ${dataTesting.daily[clickedId].pressure} hPa`}</div>
+                >{`Atmospheric pressure: ${data.daily[clickedId].pressure} hPa`}</div>
               </div>
             </div>
           </div>
@@ -94,4 +91,8 @@ function WeatherWeek() {
   );
 }
 
-export default WeatherWeek;
+const mapToProps = ({ data }) => ({ data });
+
+const connected = connect(mapToProps);
+
+export default connected(WeatherWeek);

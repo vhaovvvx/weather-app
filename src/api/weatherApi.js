@@ -10,7 +10,6 @@ const weatherApi = {
     const data = await axiosClient.get(api.baseUrlWeather, {
       params: params,
     });
-
     return data;
   },
   getDataWeek: async (params) => {

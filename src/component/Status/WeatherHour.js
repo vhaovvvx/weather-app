@@ -1,16 +1,15 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-import { useSelector } from 'react-redux';
+import { connect } from 'redux-zero/react';
 import { formatAMPM } from '../GetDateAmPm';
 
-function WeatherHour() {
-  const dataTesting = useSelector((state) => state.weather.data);
+function WeatherHour({ data }) {
   const dataTemp = [];
   const dataFeelsLike = [];
   const currentTime = [];
 
-  if (dataTesting.hourly !== undefined) {
-    dataTesting.hourly.forEach((res, i) => {
+  if (data !== undefined) {
+    data.hourly.forEach((res, i) => {
       if (i % 2 !== 0) {
         dataTemp.push(res.temp);
         dataFeelsLike.push(res.feels_like);
@@ -44,4 +43,8 @@ function WeatherHour() {
   );
 }
 
-export default WeatherHour;
+const mapToProps = ({ data }) => ({ data });
+
+const connected = connect(mapToProps);
+
+export default connected(WeatherHour);

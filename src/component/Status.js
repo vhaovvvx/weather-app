@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import ButtonGroup from './ButtonGr/ButtonGroup';
 import avatar from '../assets/avatar.jpg';
-import WeatherOneDay from './Status/WeatherOneDay';
-import WeatherHour from './Status/WeatherHour';
-import WeatherWeek from './Status/WeatherWeek';
+import ButtonGroup from './ButtonGr/ButtonGroup';
 import classes from './Status.module.css';
-import { useSelector } from 'react-redux';
+import WeatherHour from './Status/WeatherHour';
+import WeatherOneDay from './Status/WeatherOneDay';
+import WeatherWeek from './Status/WeatherWeek';
+import { connect } from 'redux-zero/react';
 
-function Status() {
-  const error = useSelector((state) => state.weather.error);
-
+function Status({ data, error }) {
   const [page, setPage] = useState('');
 
   const printButtonLabel = (event) => {
@@ -17,7 +15,7 @@ function Status() {
     //do some stuff here
   };
 
-  const data = ['Today', 'Week', 'Hour'];
+  const dataDayWeekHour = ['Today', 'Week', 'Hour'];
 
   return (
     <div className='container grid'>
@@ -25,7 +23,7 @@ function Status() {
 
       <div className={classes.navigation}>
         <div className={classes.navigationBtnGroup}>
-          <ButtonGroup buttons={data} shows={printButtonLabel} />
+          <ButtonGroup buttons={dataDayWeekHour} shows={printButtonLabel} />
         </div>
         <div className=''>
           <img src={avatar} className={classes.navigationImg} alt='Avatar' />
@@ -53,4 +51,8 @@ function Status() {
   );
 }
 
-export default Status;
+const mapToProps = ({ data, error }) => ({ data, error });
+
+const connected = connect(mapToProps);
+
+export default connected(Status);
